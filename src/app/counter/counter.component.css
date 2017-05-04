@@ -1,0 +1,49 @@
+.counter {
+  display: inline-block;
+  height: 250px;
+  position: relative;
+  width: 250px;
+}
+
+.display-value {
+  font-size: 4rem;
+}
+
+.is-ticking {
+  transition: color .2s;
+}
+
+.is-increasing {
+  color: #44b058;
+}
+
+.is-decreasing {
+  color: #ca3f30;
+}
+
+.is-increasing:before {
+  /*content: "+";*/
+  /*font-size: 3em;*/
+}
+
+.is-decreasing:before {
+  /*content: "-";*/
+  /*font-size: 3em;*/
+}
+
+.symbol {
+  font-size: 4rem;
+  /*border: 1px solid;*/
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+
+  left: 0;
+  opacity: 0;
+  transition: left .15s ease-in-out, opacity .15s ease-in-out;
+}
+
+.is-increasing .symbol {
+  left: -100px;
+  opacity: 1;
+}
