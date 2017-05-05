@@ -9,16 +9,8 @@ import NumberService from "./shared/number.service";
   styleUrls: ['./app.component.css'],
   providers: [NumberService]
 })
-export class AppComponent implements OnInit {
-  private total: number;
+export class AppComponent {
 
-  constructor (private numberService: NumberService) {}
+  constructor () {}
 
-  ngOnInit () {
-    this.total = 0;
-
-    setInterval(() => {
-      this.total += this.numberService.getTotal();
-    }, 5000);
-  }
 }

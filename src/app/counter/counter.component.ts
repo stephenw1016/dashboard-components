@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations'
 
 import {PrettyNumberPipe} from '../shared/pretty-number.pipe'
@@ -30,7 +30,7 @@ export default class CounterComponent implements OnChanges, OnInit {
   private displayValue: string = '0';
   private counterState: string;
 
-  constructor (private rd: Renderer2) {
+  constructor () {
     this.prettyNumberPipe = new PrettyNumberPipe();
   }
 
