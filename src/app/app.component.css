@@ -1,11 +1,20 @@
-body, html {
-  background-color: #000;
+.container {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 100%;
+  height: 100%;
 }
 
-main {
-  padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
+.component-list {
+  background: #f8f8f8;
+  box-shadow: inset -5px 0 10px -4px rgba(0,0,0,0.12);
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.component-display {
+  padding: 0 30px;
+  border-radius: 2px;
+  grid-column: 2;
+  grid-row: 1;
 }

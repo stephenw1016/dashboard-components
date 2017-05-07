@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import DashboardComponentList from "./dashboard-component-list/dashboard-component-list.component";
 import CounterDetailComponent from "./detail/counter-detail.component";
 import CounterComponent from "./counter/counter.component";
+import '../../src/styles.css';
 
 
 const routes: Routes = [
