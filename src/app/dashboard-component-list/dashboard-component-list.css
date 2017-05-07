@@ -27,3 +27,7 @@ a {
   font-family: Arial, sans-serif;
   text-decoration: none;
 }
+
+a.active {
+  color: #2ec6ec;
+}

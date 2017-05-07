@@ -20,13 +20,9 @@ export default class CounterDetailComponent implements OnInit {
 
   ngOnInit () {
     this.route.queryParams.subscribe((params: Params) => {
-      this.total = Observable.of(params.start);
+      this.total = Observable
+        .interval(5000)
+        .flatMap(() => Observable.of(this.numberService.getRandomNumber(params.start)));
     });
-
-    this.total = Observable
-      .interval(5000)
-      .flatMap(() => {
-        return Observable.of(this.numberService.getTotal());
-      });
   }
 }

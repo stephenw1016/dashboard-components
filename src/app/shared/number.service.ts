@@ -5,7 +5,8 @@ export default class NumberService {
 
   constructor () {}
 
-  getTotal (): number {
-    return Math.random() * 50;
+  getRandomNumber (max: number = 100): number {
+    console.log(max);
+    return Math.random() * max;
   }
 }
