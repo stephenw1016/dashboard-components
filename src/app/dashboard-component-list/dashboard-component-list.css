@@ -14,6 +14,14 @@ li {
   margin: 0 20px;
 }
 
+li:first-child {
+  border-top: none;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
 a {
   color: #567b79;
   font-family: Arial, sans-serif;

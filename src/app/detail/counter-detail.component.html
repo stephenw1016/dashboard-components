@@ -1,4 +1,5 @@
-<main>
-  <h1>Counter Component</h1>
-  <saw-counter class="counter" [value]="total" [duration]="2000"></saw-counter>
-</main>
+<div>
+  <div class="container">
+    <saw-counter class="counter" [value]="total | async" [duration]="2000"></saw-counter>
+  </div>
+</div>

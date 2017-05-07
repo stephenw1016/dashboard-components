@@ -13,8 +13,6 @@
 }
 
 .component-display {
-  padding: 0 30px;
-  border-radius: 2px;
   grid-column: 2;
   grid-row: 1;
 }

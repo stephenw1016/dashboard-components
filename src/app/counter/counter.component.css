@@ -1,8 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20% auto;
+  height: 100%;
+  text-align: center;
+}
+
+.title {
+  color: #444;
+  grid-row: 1;
+  justify-self: stretch;
+}
+
 .counter {
-  display: inline-block;
-  height: 250px;
-  position: relative;
-  width: 250px;
+  align-self: center;
+  color: #444;
+  grid-row: 2;
+  justify-self: stretch;
 }
 
 .display-value {
