@@ -18,7 +18,8 @@ import {PrettyNumberPipe} from '../shared/pretty-number.pipe'
 export default class CounterComponent implements OnChanges, OnInit {
   @Input() private value: number;
   @Input() private duration: number;
-  private tickingClass = '';
+  private isIncreasing: boolean = false;
+  private isDecreasing: boolean = false;
   private prettyNumberPipe: PrettyNumberPipe;
   private num: number;
   private refreshInterval: number;
@@ -47,7 +48,8 @@ export default class CounterComponent implements OnChanges, OnInit {
   countIt (newValue: number = 0, oldValue: number = 0) {
     if (newValue !== oldValue) {
       this.counterState = newValue > oldValue ? 'increasing' : 'decreasing';
-      this.tickingClass = 'is-ticking ' + this.counterState;
+      this.isIncreasing = this.counterState === 'increasing';
+      this.isDecreasing = this.counterState !== 'increasing';
     }
     this.step = 0;
     this.animationFrameId = null;
@@ -66,7 +68,8 @@ export default class CounterComponent implements OnChanges, OnInit {
         this.num = this.countTo;
         this.displayValue = this.prettyNumberPipe.transform(this.num, 1);
         this.counterState = '';
-        this.tickingClass = '';
+        this.isIncreasing = false;
+        this.isDecreasing = false;
       } else {
         this.displayValue = this.prettyNumberPipe.transform(Math.round(this.num), 1);
         this.tick();

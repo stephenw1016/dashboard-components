@@ -26,14 +26,21 @@
 .symbol {
   font-size: 3.5rem;
   grid-row: 2;
-  justify-self: stretch;
   opacity: 0;
   position: absolute;
-  transition: transform .25s ease-out, opacity .15s ease-in-out;
+  transition: transform .15s ease-in, opacity .15s ease-in;
 }
 
-.is-ticking.increasing .symbol.plus,
-.is-ticking.decreasing .symbol.minus {
+.symbol.plus {
+  color: #44b058;
+}
+
+.symbol.minus {
+  color: #ca3f30;
+}
+
+.is-increasing .symbol.plus,
+.is-decreasing .symbol.minus {
   opacity: 1;
   transform: translate(-40px, 0);
 }

@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" [ngClass]="{ 'is-decreasing': isDecreasing, 'is-increasing': isIncreasing }">
   <h3 class="title">Basic Counter</h3>
-  <div [@counterState]="counterState" class="counter {{tickingClass}}">
+  <div [@counterState]="counterState" class="counter">
     <span class="symbol plus">+</span>
     <span class="symbol minus">-</span>
     <span class="display-value">{{displayValue}}</span>
