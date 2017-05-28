@@ -12,8 +12,8 @@ import {HttpModule} from "@angular/http";
 
 
 const routes: Routes = [
-  { path: 'detail/counter', component: CounterDetailComponent },
-  { path: '', redirectTo: 'detail/counter?start=50', pathMatch: 'full' },
+  { path: 'events/:year/:month', component: CounterDetailComponent },
+  { path: '', redirectTo: 'events/2015/05', pathMatch: 'full' },
 ];
 
 @NgModule({
