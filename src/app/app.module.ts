@@ -4,7 +4,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule, Routes} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import DashboardComponentList from "./dashboard-component-list/dashboard-component-list.component";
+import DashboardComponentListComponent from "./dashboard-component-list/dashboard-component-list.component";
 import CounterDetailComponent from "./detail/counter-detail.component";
 import CounterComponent from "./counter/counter.component";
 import '../../src/styles.css';
@@ -25,7 +25,7 @@ const routes: Routes = [
     AppComponent,
     CounterComponent,
     CounterDetailComponent,
-    DashboardComponentList
+    DashboardComponentListComponent
   ],
   bootstrap: [ AppComponent ]
 })
