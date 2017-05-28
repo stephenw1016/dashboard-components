@@ -8,6 +8,7 @@ import DashboardComponentListComponent from "./dashboard-component-list/dashboar
 import CounterDetailComponent from "./detail/counter-detail.component";
 import CounterComponent from "./counter/counter.component";
 import '../../src/styles.css';
+import {HttpModule} from "@angular/http";
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpModule,
     RouterModule.forRoot(routes)
   ],
   declarations: [
