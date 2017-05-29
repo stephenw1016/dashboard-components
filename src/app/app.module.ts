@@ -2,18 +2,19 @@ import {NgModule} from '@angular/core';
 import {BrowserModule}  from '@angular/platform-browser';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule, Routes} from "@angular/router";
+import {HttpModule} from "@angular/http";
 
 import {AppComponent} from './app.component';
 import DashboardComponentListComponent from "./dashboard-component-list/dashboard-component-list.component";
-import CounterDetailComponent from "./detail/counter-detail.component";
+import ActivityDetailComponent from "./activity/detail/activity-detail.component";
 import CounterComponent from "./counter/counter.component";
+
 import '../../src/styles.css';
-import {HttpModule} from "@angular/http";
 
 
 const routes: Routes = [
-  { path: 'events/:year/:month', component: CounterDetailComponent },
-  { path: '', redirectTo: 'events/2015/05', pathMatch: 'full' },
+  { path: 'activity/:year/:month', component: ActivityDetailComponent },
+  { path: '', redirectTo: 'activity/2015/05', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -26,7 +27,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     CounterComponent,
-    CounterDetailComponent,
+    ActivityDetailComponent,
     DashboardComponentListComponent
   ],
   bootstrap: [ AppComponent ]
