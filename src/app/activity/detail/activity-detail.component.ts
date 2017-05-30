@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from "@angular/router";
 
 import NumberService from "../../shared/number.service";
 import ActivityService from "../activity.service";
+import {Activity} from "../shared/activity.model";
 
 @Component({
   selector: 'activity-detail-component',
@@ -11,8 +12,9 @@ import ActivityService from "../activity.service";
   providers: [NumberService, ActivityService]
 })
 export default class ActivityDetailComponent implements OnInit {
-  private total: number;
   private activities: Object[];
+  private totalActivities: number;
+  private totalInjured: number;
 
   constructor (
     private numberService: NumberService,
@@ -23,8 +25,14 @@ export default class ActivityDetailComponent implements OnInit {
   ngOnInit () {
     this.route.params.subscribe((params: Params) => {
       this.activityService.getEvents(params.year, params.month).subscribe((activities) => {
-        this.activities = activities;
-        this.total = activities.length;
+        this.totalActivities = activities.length;
+        this.activities = activities.map((activity: any) => {
+          return new Activity(activity);
+        });
+        this.totalInjured = this.activities.reduce((injuryCount: any, activity: any) => {
+          injuryCount += activity.getInjured();
+          return injuryCount;
+        }, 0);
       });
 
       // this.total = Observable
@@ -32,4 +40,12 @@ export default class ActivityDetailComponent implements OnInit {
       //   .flatMap(() => Observable.of(this.numberService.getRandomNumber(params.start)));
     });
   }
+
+  calcInjuries (activities: any): number {
+
+
+
+    return 0;
+  }
+
 }

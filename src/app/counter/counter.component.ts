@@ -16,6 +16,7 @@ import {PrettyNumberPipe} from '../shared/pretty-number.pipe'
   ]
 })
 export default class CounterComponent implements OnChanges, OnInit {
+  @Input() private title: string;
   @Input() private value: number;
   @Input() private duration: number;
   private isIncreasing: boolean = false;
