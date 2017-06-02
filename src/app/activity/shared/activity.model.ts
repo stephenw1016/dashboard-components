@@ -1,4 +1,4 @@
-import { ActivityType } from "./ActivityType";
+import { ActivityType } from './ActivityType';
 
 export class Activity {
 

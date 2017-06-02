@@ -5,7 +5,7 @@ import { Pipe, PipeTransform} from '@angular/core';
 })
 export class PrettyNumberPipe implements PipeTransform {
 
-  transform (number:number, fixAmount?:number, unit?:string): string {
+  transform (number: number, fixAmount?: number, unit?: string): string {
     let si = [
       { value: 1E24, symbol: 'Y' },
       { value: 1E21, symbol: 'Z' },
@@ -32,7 +32,7 @@ export class PrettyNumberPipe implements PipeTransform {
     return PrettyNumberPipe.truncate(number, fixAmount) + (unit || '');
   }
 
-  static truncate (number:number, fixAmount:number = 1) {
+  static truncate (number: number, fixAmount = 1) {
     let isFloat = number === Number(number) && number % 1 !== 0;
     return isFloat ? Number(number.toFixed(fixAmount)) : number;
   }

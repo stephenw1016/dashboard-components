@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from "@angular/router";
+import { ActivatedRoute, Params } from '@angular/router';
 
-import NumberService from "../../shared/number.service";
-import ActivityService from "../activity.service";
-import {Activity} from "../shared/activity.model";
+import NumberService from '../../shared/number.service';
+import ActivityService from '../activity.service';
+import { Activity } from '../shared/activity.model';
 
 @Component({
   selector: 'activity-detail-component',
@@ -29,10 +29,7 @@ export default class ActivityDetailComponent implements OnInit {
         this.activities = activities.map((activity: any) => {
           return new Activity(activity);
         });
-        this.totalInjured = this.activities.reduce((injuryCount: any, activity: any) => {
-          injuryCount += activity.getInjured();
-          return injuryCount;
-        }, 0);
+        this.totalInjured = this.calcInjuries(activities)
       });
 
       // this.total = Observable
@@ -41,11 +38,12 @@ export default class ActivityDetailComponent implements OnInit {
     });
   }
 
-  calcInjuries (activities: any): number {
-
-
-
-    return 0;
+  // TODO: implement
+  calcInjuries (activities: Array<Activity>): number {
+    return activities.reduce((injuryCount: any, activity: any) => {
+      injuryCount += activity.getInjured();
+      return injuryCount;
+    }, 0);
   }
 
 }

@@ -1,7 +1,7 @@
-import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations'
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
-import {PrettyNumberPipe} from '../shared/pretty-number.pipe'
+import {PrettyNumberPipe} from '../shared/pretty-number.pipe';
 
 @Component({
   selector: 'saw-counter',
@@ -41,12 +41,12 @@ export default class CounterComponent implements OnChanges, OnInit {
     this.steps = Math.ceil(this.duration / this.refreshInterval);
   }
 
-  ngOnChanges (changes:SimpleChanges) {
+  ngOnChanges (changes: SimpleChanges) {
     let change = changes.value;
     this.countIt(change.currentValue, change.previousValue);
   }
 
-  countIt (newValue: number = 0, oldValue: number = 0) {
+  countIt (newValue = 0, oldValue = 0) {
     if (newValue !== oldValue) {
       this.counterState = newValue > oldValue ? 'increasing' : 'decreasing';
       this.isIncreasing = this.counterState === 'increasing';

@@ -5,7 +5,7 @@ export default class NumberService {
 
   constructor () {}
 
-  getRandomNumber (max: number = 100): number {
+  getRandomNumber (max = 100): number {
     return Math.random() * max;
   }
 }
