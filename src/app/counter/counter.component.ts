@@ -19,8 +19,9 @@ export default class CounterComponent implements OnChanges, OnInit {
   @Input() private title: string;
   @Input() private value: number;
   @Input() private duration: number;
-  private isIncreasing: boolean = false;
-  private isDecreasing: boolean = false;
+
+  private isIncreasing: boolean;
+  private isDecreasing: boolean;
   private prettyNumberPipe: PrettyNumberPipe;
   private num: number;
   private refreshInterval: number;
@@ -29,7 +30,7 @@ export default class CounterComponent implements OnChanges, OnInit {
   private countTo: number;
   private increment: number;
   private animationFrameId: number;
-  private displayValue: string = '0';
+  private displayValue: string;
   private counterState: string;
 
   constructor () {
@@ -37,6 +38,9 @@ export default class CounterComponent implements OnChanges, OnInit {
   }
 
   ngOnInit () {
+    this.isIncreasing = false;
+    this.isDecreasing = false;
+    this.displayValue = '0';
     this.refreshInterval = 30;
     this.steps = Math.ceil(this.duration / this.refreshInterval);
   }

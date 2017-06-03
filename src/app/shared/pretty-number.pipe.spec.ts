@@ -13,8 +13,12 @@ describe('PrettyNumberPipe', () => {
     it('should suffix with \'E\'', () => expect(pipe.transform(1000000000000000000, 1)).toBe('1E'));
     it('should suffix with \'Z\'', () => expect(pipe.transform(1000000000000000000000, 1)).toBe('1Z'));
     it('should suffix with \'Y\'', () => expect(pipe.transform((1000000000000000000000000), 1)).toBe('1Y'));
-    it('should override suffix with \'ABC\'', () => expect(pipe.transform((1000000000000000000000000), 1, 'ABC')).toBe('1ABC'));
-    it('should not override suffix when blank string is provided \'\'', () => expect(pipe.transform((1000000000000000000000000), 1, '')).toBe('1Y'));
+    it('should override suffix with \'ABC\'', () => {
+      expect(pipe.transform((1000000000000000000000000), 1, 'ABC')).toBe('1ABC');
+    });
+    it('should not override suffix when blank string is provided \'\'', () => {
+      expect(pipe.transform((1000000000000000000000000), 1, '')).toBe('1Y');
+    });
   });
 
   describe('truncating', () => {

@@ -29,7 +29,7 @@ export default class ActivityDetailComponent implements OnInit {
         this.activities = activities.map((activity: any) => {
           return new Activity(activity);
         });
-        this.totalInjured = this.calcInjuries(activities)
+        this.totalInjured = this.calcInjuries(activities);
       });
 
       // this.total = Observable

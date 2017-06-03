@@ -2,6 +2,17 @@ import { ActivityType } from './ActivityType';
 
 export class Activity {
 
+  private date: Date;
+  private dead: number;
+  private details: string;
+  private injured: number;
+  private location: Array<number>;
+  private locationUrl: string;
+  private locationName: string;
+  private partOf: string;
+  private perpetrator: string;
+  private type: ActivityType;
+
   constructor (activity: any) {
     let injuryCount = parseInt(activity.injured, 10);
 
@@ -16,17 +27,6 @@ export class Activity {
     this.perpetrator = activity.perpetrator;
     this.type = activity.type;
   }
-
-  private date: Date;
-  private dead: number;
-  private details: string;
-  private injured: number;
-  private location: Array<number>;
-  private locationUrl: string;
-  private locationName: string;
-  private partOf: string;
-  private perpetrator: string;
-  private type: ActivityType;
 
   getDate () {
     return this.date;
