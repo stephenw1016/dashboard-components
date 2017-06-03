@@ -11,7 +11,7 @@ module.exports = function (config) {
       'karma-coverage',
       'karma-sourcemap-loader',
       'karma-webpack',
-      'karma-phantomjs-launcher'
+      'karma-jsdom-launcher'
     ],
 
     files: [
@@ -50,11 +50,7 @@ module.exports = function (config) {
 
     autoWatch: false,
 
-    browsers: ['PhantomJS'],
-
-    phantomjsLauncher: {
-      exitOnResourceError: true
-    },
+    browsers: ['jsdom'],
 
     singleRun: true
   };
