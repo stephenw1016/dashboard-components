@@ -6,12 +6,20 @@ module.exports = function (config) {
 
     frameworks: ['jasmine'],
 
+    plugins: [
+      'karma-jasmine',
+      'karma-coverage',
+      'karma-sourcemap-loader',
+      'karma-webpack',
+      'karma-phantomjs-launcher'
+    ],
+
     files: [
-      {pattern: './config/karma-test-shim.js', watched: false}
+      { pattern: './config/karma-test-shim.js', watched: false }
     ],
 
     preprocessors: {
-      './config/karma-test-shim.js': ['webpack', 'sourcemap']
+      './config/karma-test-shim.js': ['webpack', 'coverage', 'sourcemap']
     },
 
     webpack: webpackConfig,
@@ -24,12 +32,30 @@ module.exports = function (config) {
       noInfo: true
     },
 
-    reporters: ['kjhtml'],
+    reporters: ['progress', 'coverage'],
+
+    coverageReporter: {
+      dir: 'coverage',
+      type: 'lcovonly',
+      reporters: [
+        { type: 'lcovonly', subdir: '/' }
+      ]
+    },
+
     port: 9876,
+
     colors: true,
+
     logLevel: config.LOG_INFO,
+
     autoWatch: false,
+
     browsers: ['PhantomJS'],
+
+    phantomjsLauncher: {
+      exitOnResourceError: true
+    },
+
     singleRun: true
   };
 
