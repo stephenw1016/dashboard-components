@@ -12,9 +12,10 @@ import { Activity } from '../shared/activity.model';
   providers: [NumberService, ActivityService]
 })
 export default class ActivityDetailComponent implements OnInit {
-  private activities: Object[];
+  private activities: Array<Activity>;
   private totalActivities: number;
   private totalInjured: number;
+  private totalDeaths: number;
 
   constructor (
     private numberService: NumberService,
@@ -25,25 +26,25 @@ export default class ActivityDetailComponent implements OnInit {
   ngOnInit () {
     this.route.params.subscribe((params: Params) => {
       this.activityService.getEvents(params.year, params.month).subscribe((activities) => {
+        this.activities = activities;
         this.totalActivities = activities.length;
-        this.activities = activities.map((activity: any) => {
-          return new Activity(activity);
-        });
-        this.totalInjured = this.calcInjuries(activities);
+        this.totalInjured = this.sumInjuries(activities);
+        this.totalDeaths = this.sumDeaths(activities);
       });
-
-      // this.total = Observable
-      //   .interval(5000)
-      //   .flatMap(() => Observable.of(this.numberService.getRandomNumber(params.start)));
     });
   }
 
-  // TODO: implement
-  calcInjuries (activities: Array<Activity>): number {
-    return activities.reduce((injuryCount: any, activity: any) => {
+  sumInjuries (activities: Array<Activity>): number {
+    return activities.reduce((injuryCount, activity) => {
       injuryCount += activity.getInjured();
       return injuryCount;
     }, 0);
   }
 
+  sumDeaths (activities: Array<Activity>): number {
+    return activities.reduce((deathCount, activity) => {
+      deathCount += activity.getDead();
+      return deathCount;
+    }, 0);
+  }
 }

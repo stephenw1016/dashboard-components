@@ -2,8 +2,9 @@
 .container {
   box-sizing: border-box;
   border-radius: 2px;
-  border: 1px solid blue;
   display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 150px 25% 25% 25%;
   height: 100%;
   width: 100%;
 }

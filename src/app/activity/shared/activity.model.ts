@@ -15,9 +15,10 @@ export class Activity {
 
   constructor (activity: any) {
     let injuryCount = parseInt(activity.injured, 10);
+    let deathCount = parseInt(activity.dead, 10);
 
     this.date = activity.date;
-    this.dead = activity.dead;
+    this.dead = isNaN(deathCount) ? 0 : deathCount;
     this.details = activity.details;
     this.injured = isNaN(injuryCount) ? 0 : injuryCount;
     this.location = activity.location;
