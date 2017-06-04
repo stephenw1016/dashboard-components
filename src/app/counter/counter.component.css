@@ -7,14 +7,16 @@
 }
 
 .title {
-  color: #444;
+  color: #9e8484;
+  font-weight: 600;
   grid-row: 1;
   justify-self: stretch;
 }
 
 .counter {
   align-self: center;
-  color: #444;
+  color: #4b565d;
+  font-weight: lighter;
   grid-row: 2;
   justify-self: stretch;
 }

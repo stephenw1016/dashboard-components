@@ -14,8 +14,10 @@ import { Activity } from '../shared/activity.model';
 export default class ActivityDetailComponent implements OnInit {
   private activities: Array<Activity>;
   private totalActivities: number;
-  private totalInjured: number;
+  private totalInjuries: number;
   private totalDeaths: number;
+  private avgInjuries: number;
+  private avgDeaths: number;
 
   constructor (
     private numberService: NumberService,
@@ -26,10 +28,13 @@ export default class ActivityDetailComponent implements OnInit {
   ngOnInit () {
     this.route.params.subscribe((params: Params) => {
       this.activityService.getEvents(params.year, params.month).subscribe((activities) => {
+        console.log(activities);
         this.activities = activities;
         this.totalActivities = activities.length;
-        this.totalInjured = this.sumInjuries(activities);
+        this.totalInjuries = this.sumInjuries(activities);
         this.totalDeaths = this.sumDeaths(activities);
+        this.avgInjuries = this.totalInjuries / this.totalActivities;
+        this.avgDeaths = this.totalDeaths / this.totalActivities;
       });
     });
   }
