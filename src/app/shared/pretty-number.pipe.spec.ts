@@ -4,7 +4,7 @@ describe('PrettyNumberPipe', () => {
 
   let pipe: PrettyNumberPipe = new PrettyNumberPipe();
 
-  describe('prefixing', () => {
+  describe('suffixing', () => {
     it('should suffix with \'k\'', () => expect(pipe.transform(1000, 1)).toBe('1k'));
     it('should suffix with \'M\'', () => expect(pipe.transform(1000000, 1)).toBe('1M'));
     it('should suffix with \'G\'', () => expect(pipe.transform(1000000000, 1)).toBe('1G'));

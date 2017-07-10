@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import NumberService from '../../shared/number.service';
 import ActivityService from '../activity.service';
 import { Activity } from '../shared/activity.model';
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'activity-detail-component',
@@ -11,13 +12,14 @@ import { Activity } from '../shared/activity.model';
   styleUrls: ['./activity-detail.component.css'],
   providers: [NumberService, ActivityService]
 })
-export default class ActivityDetailComponent implements OnInit {
+export default class ActivityDetailComponent implements OnInit, OnDestroy {
   private activities: Array<Activity>;
   private totalActivities: number;
   private totalInjuries: number;
   private totalDeaths: number;
   private avgInjuries: number;
   private avgDeaths: number;
+  private activitySubscription: Subscription;
 
   constructor (
     private numberService: NumberService,
@@ -26,8 +28,8 @@ export default class ActivityDetailComponent implements OnInit {
   ) {}
 
   ngOnInit () {
-    this.route.params.subscribe((params: Params) => {
-      this.activityService.getEvents(params.year, params.month).subscribe((activities) => {
+    this.activitySubscription = this.route.params.subscribe((params: Params) => {
+      this.activityService.getActivities(params.year, params.month).subscribe((activities) => {
         console.log(activities);
         this.activities = activities;
         this.totalActivities = activities.length;
@@ -37,6 +39,10 @@ export default class ActivityDetailComponent implements OnInit {
         this.avgDeaths = this.totalDeaths / this.totalActivities;
       });
     });
+  }
+
+  ngOnDestroy () {
+    this.activitySubscription.unsubscribe();
   }
 
   sumInjuries (activities: Array<Activity>): number {
