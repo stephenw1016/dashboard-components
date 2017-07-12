@@ -11,7 +11,9 @@ export default class ActivityService {
   constructor (private http: Http) {}
 
   getActivities (year: string, month: string): Observable<Activity[]> {
-    let url = `./src/data/wikipedia-terrorist-events-${year}-${month}.json`;
+    let url = month ?
+      `./src/data/wikipedia-terrorist-events-${year}-${month}.json` :
+      `./src/data/events-${year}.json`;
 
     return this.http.get(url)
       .map(response => {

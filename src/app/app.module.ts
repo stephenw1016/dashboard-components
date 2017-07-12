@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import DashboardComponentListComponent from './dashboard-component-list/dashboard-component-list.component';
 import ActivityDetailComponent from './activity/detail/activity-detail.component';
 import CounterComponent from './counter/counter.component';
+import ChartComponent from "./chart/chart.component";
 
 import '../../src/styles.css';
 
 
 const routes: Routes = [
-  { path: 'activity/:year/:month', component: ActivityDetailComponent },
-  { path: '', redirectTo: 'activity/2015/05', pathMatch: 'full' },
+  { path: 'activities/year/:year', component: ActivityDetailComponent },
+  { path: 'activities/:year/:month', component: ActivityDetailComponent },
+  { path: '', redirectTo: 'activities/year/2015', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -26,6 +28,7 @@ const routes: Routes = [
   ],
   declarations: [
     AppComponent,
+    ChartComponent,
     CounterComponent,
     ActivityDetailComponent,
     DashboardComponentListComponent

@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import * as d3 from 'd3';
 
 import NumberService from '../../shared/number.service';
 import ActivityService from '../activity.service';
@@ -20,6 +21,7 @@ export default class ActivityDetailComponent implements OnInit, OnDestroy {
   private avgInjuries: number;
   private avgDeaths: number;
   private activitySubscription: Subscription;
+  private data: Object;
 
   constructor (
     private numberService: NumberService,
@@ -37,6 +39,7 @@ export default class ActivityDetailComponent implements OnInit, OnDestroy {
         this.totalDeaths = this.sumDeaths(activities);
         this.avgInjuries = this.totalInjuries / this.totalActivities;
         this.avgDeaths = this.totalDeaths / this.totalActivities;
+        this.data = d3.nest().key((d:Activity) => d.getType().toString().toLowerCase()).entries(activities);
       });
     });
   }

@@ -6,6 +6,12 @@ import '@angular/common';
 import '@angular/http';
 import '@angular/router';
 
+// chroma-js
+import 'chroma-js';
+
+// D3
+import 'd3';
+
 // RxJS
 import 'rxjs';
 
