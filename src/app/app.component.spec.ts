@@ -1,11 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterModule, Routes } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import DashboardComponentListComponent from './dashboard-component-list/dashboard-component-list.component';
-import {RouterModule, Routes} from '@angular/router';
-import CounterComponent from './counter/counter.component';
-import {APP_BASE_HREF} from '@angular/common';
 import ActivityDetailComponent from './activity/detail/activity-detail.component';
+import CounterComponent from './counter/counter.component';
+import ChartComponent from "./chart/chart.component";
+import DashboardComponentListComponent from './dashboard-component-list/dashboard-component-list.component';
 
 const routes: Routes = [
   { path: 'detail/counter', component: ActivityDetailComponent },
@@ -24,6 +25,7 @@ describe('App', () => {
       declarations: [
         AppComponent,
         CounterComponent,
+        ChartComponent,
         ActivityDetailComponent,
         DashboardComponentListComponent
       ],

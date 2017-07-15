@@ -16,9 +16,6 @@ export default class ActivityService {
       `./src/data/events-${year}.json`;
 
     return this.http.get(url)
-      .map(response => {
-        let jsonResponse: string[] = response.json();
-        return jsonResponse.map((activity) => new Activity(activity))
-      });
+      .map(response => response.json().map((activity: String) => new Activity(activity)));
   }
 }
