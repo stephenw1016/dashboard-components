@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import ActivityListComponent from './activity/list/activity-list.component';
 import ActivityDetailComponent from './activity/detail/activity-detail.component';
 import CounterComponent from './counter/counter.component';
-import ChartComponent from "./chart/chart.component";
+import ChartComponent from './chart/chart.component';
 
 import '../../src/styles.css';
 

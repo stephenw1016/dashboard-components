@@ -5,7 +5,7 @@ import * as d3 from 'd3';
 import NumberService from '../../shared/number.service';
 import ActivityService from '../activity.service';
 import { Activity } from '../shared/activity.model';
-import {Subscription} from "rxjs/Subscription";
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'activity-detail-component',
@@ -39,7 +39,7 @@ export default class ActivityDetailComponent implements OnInit, OnDestroy {
         this.totalDeaths = this.sumDeaths(activities);
         this.avgInjuries = this.totalInjuries / this.totalActivities;
         this.avgDeaths = this.totalDeaths / this.totalActivities;
-        this.data = d3.nest().key((d:Activity) => d.getType().toString().toLowerCase()).entries(activities);
+        this.data = d3.nest().key((d: Activity) => d.getType().toString().toLowerCase()).entries(activities);
       });
     });
   }

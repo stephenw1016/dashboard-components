@@ -13,7 +13,7 @@ export default class ChartComponent implements AfterViewInit, OnChanges {
 
   private chartClass: String;
 
-  ngOnChanges (changes:SimpleChanges) {
+  ngOnChanges (changes: SimpleChanges) {
     if (changes.data && !changes.data.isFirstChange()) {
       this.renderChart(changes.data.currentValue);
     }
@@ -23,7 +23,7 @@ export default class ChartComponent implements AfterViewInit, OnChanges {
     this.chartClass = this.chartContainer.nativeElement.className;
   }
 
-  renderChart (data:Array<any>) {
+  renderChart (data: Array<any>) {
     let selection = d3.select(`.${this.chartClass}`);
     let height = 300;
     let width = 300;
@@ -39,13 +39,13 @@ export default class ChartComponent implements AfterViewInit, OnChanges {
 
     let pie = d3.pie()
       .sort(null)
-      .value((d:any) => d.values.length);
+      .value((d: any) => d.values.length);
 
     let svg = selection.append('svg')
       .attr('width', width)
       .attr('height', height)
       .append('g')
-      .attr("transform", `translate(${marginLeft}, ${marginTop})`);
+      .attr('transform', `translate(${marginLeft}, ${marginTop})`);
 
     let g = svg.selectAll('.arc')
       .data(pie(data))
@@ -53,7 +53,7 @@ export default class ChartComponent implements AfterViewInit, OnChanges {
 
     g.append('path')
       .attr('d', <any>arc)
-      .style('fill', (d:any, i:any) => color(i));
+      .style('fill', (d: any, i: any) => color(i));
   }
 
 }

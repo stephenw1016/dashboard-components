@@ -6,6 +6,25 @@ let helpers = require('./helpers');
 const devConfig = {
   devtool: 'cheap-module-eval-source-map',
 
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        loaders: [
+          {
+            loader: 'tslint-loader',
+            options: {
+              configFile: 'tslint.json',
+              fix: true,
+              emitErrors: true,
+              tsConfigFile: 'tsconfig.json',
+            }
+          }
+        ]
+      }
+    ]
+  },
+
   output: {
     path: helpers.root('dist'),
     publicPath: 'http://localhost:8080/',

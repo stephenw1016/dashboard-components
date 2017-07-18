@@ -20,11 +20,6 @@ export default class CounterComponent implements OnChanges, OnInit {
   @Input() private value: number;
   @Input() private duration: number;
 
-  @HostListener('mouseover', ['$event.target'])
-  showValue ($event:EventEmitter<string>): void {
-    console.log(this.value);
-  }
-
   private isIncreasing: boolean;
   private isDecreasing: boolean;
   private prettyNumberPipe: PrettyNumberPipe;
@@ -37,6 +32,11 @@ export default class CounterComponent implements OnChanges, OnInit {
   private animationFrameId: number;
   private displayValue: string;
   private counterState: string;
+
+  @HostListener('mouseover', ['$event.target'])
+  showValue ($event: EventEmitter<string>): void {
+    console.log(this.value);
+  }
 
   constructor () {
     this.prettyNumberPipe = new PrettyNumberPipe();
