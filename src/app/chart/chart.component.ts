@@ -7,17 +7,11 @@ import * as chroma from 'chroma-js';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css'],
 })
-export default class ChartComponent implements OnInit, AfterViewInit, OnChanges {
+export default class ChartComponent implements AfterViewInit, OnChanges {
   @ViewChild('chartContainer') chartContainer: ElementRef;
-  @Input('data') data:Object;
+  @Input('data') data: Object;
 
-  private chartClass:String;
-
-  constructor () {}
-
-  ngOnInit () {
-    console.log('ngOnInit', this.data);
-  }
+  private chartClass: String;
 
   ngOnChanges (changes:SimpleChanges) {
     if (changes.data && !changes.data.isFirstChange()) {
@@ -26,7 +20,6 @@ export default class ChartComponent implements OnInit, AfterViewInit, OnChanges 
   }
 
   ngAfterViewInit() {
-    console.log('ngAfterViewInit');
     this.chartClass = this.chartContainer.nativeElement.className;
   }
 

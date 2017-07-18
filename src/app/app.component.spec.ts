@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import ActivityDetailComponent from './activity/detail/activity-detail.component';
 import CounterComponent from './counter/counter.component';
 import ChartComponent from "./chart/chart.component";
-import DashboardComponentListComponent from './dashboard-component-list/dashboard-component-list.component';
+import ActivityListComponent from './activity/list/activity-list.component';
 
 const routes: Routes = [
   { path: 'detail/counter', component: ActivityDetailComponent },
@@ -27,7 +27,7 @@ describe('App', () => {
         CounterComponent,
         ChartComponent,
         ActivityDetailComponent,
-        DashboardComponentListComponent
+        ActivityListComponent
       ],
     });
   });

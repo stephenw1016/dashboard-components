@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges, HostListener, EventEmitter} from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 import {PrettyNumberPipe} from '../shared/pretty-number.pipe';
@@ -19,6 +19,11 @@ export default class CounterComponent implements OnChanges, OnInit {
   @Input() private title: string;
   @Input() private value: number;
   @Input() private duration: number;
+
+  @HostListener('mouseover', ['$event.target'])
+  showValue ($event:EventEmitter<string>): void {
+    console.log(this.value);
+  }
 
   private isIncreasing: boolean;
   private isDecreasing: boolean;

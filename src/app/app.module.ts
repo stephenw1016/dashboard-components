@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import DashboardComponentListComponent from './dashboard-component-list/dashboard-component-list.component';
+import ActivityListComponent from './activity/list/activity-list.component';
 import ActivityDetailComponent from './activity/detail/activity-detail.component';
 import CounterComponent from './counter/counter.component';
 import ChartComponent from "./chart/chart.component";
@@ -31,7 +31,7 @@ const routes: Routes = [
     ChartComponent,
     CounterComponent,
     ActivityDetailComponent,
-    DashboardComponentListComponent
+    ActivityListComponent
   ],
   bootstrap: [ AppComponent ]
 })
