@@ -1,38 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import ActivityListComponent from './activity/list/activity-list.component';
-import ActivityDetailComponent from './activity/detail/activity-detail.component';
-import CounterComponent from './counter/counter.component';
-import ChartComponent from './chart/chart.component';
+import ActivityModule from './activity/activity.module';
 
 import '../../src/styles.css';
-
+import ActivityComponent from './activity/activity.component';
 
 const routes: Routes = [
-  { path: 'activities/year/:year', component: ActivityDetailComponent },
-  { path: 'activities/:year/:month', component: ActivityDetailComponent },
-  { path: '', redirectTo: 'activities/year/2015', pathMatch: 'full' },
+  { path: '**', component: ActivityComponent },
 ];
 
 @NgModule({
   imports: [
+    ActivityModule,
     BrowserModule,
-    BrowserAnimationsModule,
     HttpModule,
     RouterModule.forRoot(routes)
   ],
   declarations: [
-    AppComponent,
-    ChartComponent,
-    CounterComponent,
-    ActivityDetailComponent,
-    ActivityListComponent
+    AppComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

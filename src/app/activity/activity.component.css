@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 80% 20%;
+  height: 100%;
+}
+
+.component-list {
+  background-color: #16263d;
+  box-shadow: 0 5px 5px 1px rgba(0,0,0,0.12);
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.component-display {
+  grid-column: 1;
+  grid-row: 1;
+}

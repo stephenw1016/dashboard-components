@@ -1,10 +1,10 @@
 import {Component, OnInit, Input, OnChanges, SimpleChanges, HostListener, EventEmitter} from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-import {PrettyNumberPipe} from '../shared/pretty-number.pipe';
+import {PrettyNumberPipe} from '../../shared/pretty-number.pipe';
 
 @Component({
-  selector: 'saw-counter',
+  selector: 'counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css'],
   animations: [

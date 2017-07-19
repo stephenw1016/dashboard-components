@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'saw-activity-list',
+  selector: 'activity-list',
   templateUrl: './activity-list.component.html',
   styleUrls: ['./activity-list.component.css']
 })

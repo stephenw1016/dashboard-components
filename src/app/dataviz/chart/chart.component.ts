@@ -1,9 +1,9 @@
-import {AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import * as d3 from 'd3';
 import * as chroma from 'chroma-js';
 
 @Component({
-  selector: 'saw-chart',
+  selector: 'chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css'],
 })
