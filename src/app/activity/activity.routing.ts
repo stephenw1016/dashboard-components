@@ -4,9 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import ActivityDetailComponent from './detail/activity-detail.component';
 
 const routes: Routes = [
-  { path: 'activities/year/:year', component: ActivityDetailComponent },
+  { path: 'activities/:year', component: ActivityDetailComponent },
   { path: 'activities/:year/:month', component: ActivityDetailComponent },
-  { path: '', redirectTo: 'activities/year/2015', pathMatch: 'full' },
+  { path: '', redirectTo: 'activities/2015', pathMatch: 'full' },
 ];
 
 @NgModule({

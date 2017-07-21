@@ -4,8 +4,12 @@
     <router-outlet></router-outlet>
   </div>
 
-  <div class="component-list">
-    <activity-list></activity-list>
-  </div>
+  <ul class="activity-links">
+    <li *ngFor="let link of activityLinks">
+      <a routerLink="{{link.url}}"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: true}">{{link.label}}</a>
+    </li>
+  </ul>
 
 </div>
