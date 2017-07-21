@@ -8,12 +8,12 @@ import { Activity } from '../shared/activity.model';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-  selector: 'activity-detail-component',
-  templateUrl: './activity-detail.component.html',
-  styleUrls: ['./activity-detail.component.css'],
+  selector: 'activity-overview-component',
+  templateUrl: './activity-overview.component.html',
+  styleUrls: ['./activity-overview.component.css'],
   providers: [NumberService, ActivityService]
 })
-export default class ActivityDetailComponent implements OnInit, OnDestroy {
+export default class ActivityOverviewComponent implements OnInit, OnDestroy {
   private activities: Array<Activity>;
   private totalActivities: number;
   private totalInjuries: number;

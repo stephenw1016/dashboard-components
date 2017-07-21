@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import ActivityDetailComponent from './detail/activity-detail.component';
+import ActivityOverviewComponent from './overview/activity-overview.component';
 
 const routes: Routes = [
-  { path: 'activities/:year', component: ActivityDetailComponent },
-  { path: 'activities/:year/:month', component: ActivityDetailComponent },
+  { path: 'activities/:year', component: ActivityOverviewComponent },
+  { path: 'activities/:year/:month', component: ActivityOverviewComponent },
   { path: '', redirectTo: 'activities/2015', pathMatch: 'full' },
 ];
 
@@ -15,4 +15,4 @@ const routes: Routes = [
 })
 export class ActivityRoutingModule {}
 
-export const routingComponents = [ActivityDetailComponent];
+export const routingComponents = [ActivityOverviewComponent];
