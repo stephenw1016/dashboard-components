@@ -2,11 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import ActivityOverviewComponent from './overview/activity-overview.component';
+import ActivityComponent from './activity.component';
 
 const routes: Routes = [
-  { path: 'activities/:year', component: ActivityOverviewComponent },
-  { path: 'activities/:year/:month', component: ActivityOverviewComponent },
-  { path: '', redirectTo: 'activities/2015', pathMatch: 'full' },
+  {
+    path: 'activities',
+    component: ActivityComponent,
+    children: [
+      { path: ':year/:month', component: ActivityOverviewComponent },
+      { path: ':year', component: ActivityOverviewComponent },
+      { path: '**', redirectTo: '2015/09', pathMatch: 'full' }
+    ]
+  }
 ];
 
 @NgModule({

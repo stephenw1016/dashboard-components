@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import '../assets/css/styles.css';
 import NumberService from './shared/number.service';
 
 @Component({

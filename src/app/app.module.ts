@@ -10,10 +10,10 @@ import '../../src/styles.css';
 
 @NgModule({
   imports: [
-    ActivityModule,
+    AppRoutingModule,
     BrowserModule,
     HttpModule,
-    AppRoutingModule
+    ActivityModule
   ],
   declarations: [
     AppComponent

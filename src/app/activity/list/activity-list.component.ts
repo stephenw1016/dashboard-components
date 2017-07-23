@@ -1,10 +1,10 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core'
 import {Activity} from '../shared/activity.model';
 
 @Component({
   selector: 'activity-list',
   templateUrl: './activity-list.component.html',
-  styleUrls: ['./activity-list.component.css']
+  styleUrls: ['./activity-list.component.scss']
 })
 export default class ActivityListComponent implements OnChanges {
 

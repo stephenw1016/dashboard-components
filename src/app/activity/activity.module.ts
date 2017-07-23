@@ -8,9 +8,9 @@ import { ActivityRoutingModule, routingComponents } from './activity.routing';
 
 @NgModule({
   imports: [
+    ActivityRoutingModule,
     CommonModule,
-    DataVizModule,
-    ActivityRoutingModule
+    DataVizModule
   ],
   declarations: [
     ActivityComponent,

@@ -8,7 +8,7 @@ import { Activity } from '../shared/activity.model';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-  selector: 'activity-overview-component',
+  selector: 'activity-overview',
   templateUrl: './activity-overview.component.html',
   styleUrls: ['./activity-overview.component.css'],
   providers: [NumberService, ActivityService]
