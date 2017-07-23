@@ -2,3 +2,9 @@
   height: 300px;
   width: 300px;
 }
+
+.chart path {
+  cursor: pointer;
+  fill-opacity: 1;
+  transition: fill-opacity .2s ease-out;
+}

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import * as d3 from 'd3';
 import * as chroma from 'chroma-js';
 
@@ -11,6 +11,7 @@ export default class ChartComponent implements AfterViewInit, OnChanges {
   @ViewChild('chartContainer') chartContainer: ElementRef;
   @Input('data') data: Object;
 
+  private svg: any;
   private chartClass: String;
 
   ngOnChanges (changes: SimpleChanges) {
@@ -21,39 +22,51 @@ export default class ChartComponent implements AfterViewInit, OnChanges {
 
   ngAfterViewInit() {
     this.chartClass = this.chartContainer.nativeElement.className;
-  }
-
-  renderChart (data: Array<any>) {
-    let selection = d3.select(`.${this.chartClass}`);
     let height = 300;
     let width = 300;
     let marginLeft = height / 2;
     let marginTop = width / 2;
+    let selection = d3.select(`.${this.chartClass}`);
 
-    let color = d3.scaleOrdinal<number, string>()
-      .range(d3.schemeCategory20b);
-
-    let arc = d3.arc()
-      .outerRadius(90)
-      .innerRadius(70);
-
-    let pie = d3.pie()
-      .sort(null)
-      .value((d: any) => d.values.length);
-
-    let svg = selection.append('svg')
+    this.svg = selection.append('svg')
       .attr('width', width)
       .attr('height', height)
       .append('g')
       .attr('transform', `translate(${marginLeft}, ${marginTop})`);
+  }
 
-    let g = svg.selectAll('.arc')
-      .data(pie(data))
-      .enter();
+  renderChart (data: Array<any>) {
+    const duration = 500;
 
-    g.append('path')
-      .attr('d', <any>arc)
-      .style('fill', (d: any, i: any) => color(i));
+    let color = d3.scaleOrdinal<number, string>()
+      .domain(data)
+      .range(chroma.scale('YlGnBu').colors(data.length));
+
+    let arcTween = d3.arc()
+      .outerRadius(90)
+      .innerRadius(70);
+
+    let pieFn = d3.pie()
+      .sort((a: any, b: any) => a.values.length - b.values.length)
+      .value((d: any) => d.values.length);
+
+    let path = this.svg.selectAll('path')
+      .data(pieFn(data), (d: any) => d.data.key);
+
+    path.enter().append('path')
+      .style('fill', (d: any, i: any) => color(i))
+      .style('fill-opacity', 0.8)
+      .transition()
+      .duration(duration)
+      .attr('d', arcTween);
+
+    path.exit().remove();
+
+    path.transition()
+      .duration(duration)
+      .attr('d', arcTween);
   }
 
 }
+
+

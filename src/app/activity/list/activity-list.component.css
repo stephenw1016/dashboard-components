@@ -1,3 +1,7 @@
+.activity-list {
+  --spacing: 15px;
+}
+
 ul {
   color: #fff;
   list-style: none;
@@ -6,15 +10,22 @@ ul {
 }
 
 li {
-  border: 1px solid #000;
   display: inline-block;
-  padding: 15px;
-}
-
-.location {
-  display: inline-block;
+  margin: var(--spacing);
+  padding: 0 var(--spacing);
 }
 
 .date {
- display: inline-block;
+ display: block;
+}
+
+.location {
+  padding: 5px 0;
+  margin:0;
+}
+
+.type {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }

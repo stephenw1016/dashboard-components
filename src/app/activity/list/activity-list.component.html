@@ -1,7 +1,7 @@
-<ul>
+<ul class="activity-list">
   <li *ngFor="let activity of activities">
-    <h3 class="location">{{activity.locationName}}</h3>
     <span class="date">{{activity.date}}</span>
-    <p class="details">{{activity.details}}</p>
+    <h3 class="location">{{activity.locationName}}</h3>
+    <p class="type">{{activity.type}}</p>
   </li>
 </ul>
