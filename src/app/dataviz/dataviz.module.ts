@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import ChartComponent from './chart/chart.component';
 import CounterComponent from './counter/counter.component';
+import SharedModule from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    SharedModule
   ],
   declarations: [
     ChartComponent,

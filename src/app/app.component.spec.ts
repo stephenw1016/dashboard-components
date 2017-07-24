@@ -1,12 +1,12 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { TestBed } from '@angular/core/testing';
 
-import { AppComponent } from './app.component';
-import ActivityOverviewComponent from './activity/overview/activity-overview.component';
-import CounterComponent from './dataviz/counter/counter.component';
-import ChartComponent from "./dataviz/chart/chart.component";
+import AppComponent from './app.component';
 import ActivityListComponent from './activity/list/activity-list.component';
+import ActivityOverviewComponent from './activity/overview/activity-overview.component';
+import ChartComponent from "./dataviz/chart/chart.component";
+import CounterComponent from './dataviz/counter/counter.component';
 
 const routes: Routes = [
   { path: 'detail/counter', component: ActivityOverviewComponent },

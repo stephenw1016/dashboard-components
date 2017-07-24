@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import NumberService from '../shared/number.service';
 
 @Component({
   selector: 'activity',
   templateUrl: './activity.component.html',
-  styleUrls: ['./activity.component.css'],
-  providers: [NumberService],
+  styleUrls: ['./activity.component.css']
 })
 export default class ActivityComponent {
 

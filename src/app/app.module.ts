@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-// import { BrowserModule }  from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
 import AppRoutingModule from './app.routing';
+import CoreModule from './core/core.module';
+import AppComponent from './app.component';
 
 import '../../src/styles.css';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
+    CoreModule,
     HttpModule
   ],
   exports: [

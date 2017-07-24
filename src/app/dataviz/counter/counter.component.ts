@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, OnChanges, SimpleChanges, HostListener, EventEmitter} from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-import {PrettyNumberPipe} from '../../shared/pretty-number.pipe';
+import { PrettyNumberPipe } from '../../shared/pretty-number/pretty-number.pipe';
 
 @Component({
   selector: 'counter',

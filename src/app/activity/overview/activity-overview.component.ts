@@ -1,17 +1,17 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import * as d3 from 'd3';
 
-import NumberService from '../../shared/number.service';
-import ActivityService from '../activity.service';
+import * as d3 from 'd3';
+import { Subscription } from 'rxjs/Subscription';
+
 import { Activity } from '../shared/activity.model';
-import {Subscription} from 'rxjs/Subscription';
+import ActivityService from '../activity.service';
 
 @Component({
   selector: 'activity-overview',
   templateUrl: './activity-overview.component.html',
   styleUrls: ['./activity-overview.component.css'],
-  providers: [NumberService, ActivityService]
+  providers: [ActivityService]
 })
 export default class ActivityOverviewComponent implements OnInit, OnDestroy {
   private activities: Array<Activity>;
@@ -24,7 +24,6 @@ export default class ActivityOverviewComponent implements OnInit, OnDestroy {
   private data: Object;
 
   constructor (
-    private numberService: NumberService,
     private activityService: ActivityService,
     private route: ActivatedRoute
   ) {}
