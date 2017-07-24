@@ -1,0 +1,14 @@
+nav {
+  color: #fff;
+  padding: 15px;
+}
+
+a, a:visited {
+  color: #ccc;
+  text-decoration: none;
+}
+
+a.active {
+  color: #fff;
+}
+

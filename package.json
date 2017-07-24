@@ -33,6 +33,7 @@
     "@types/d3": "^4.9.0",
     "@types/jasmine": "^2.5.53",
     "@types/node": "^8.0.14",
+    "angular-router-loader": "^0.6.0",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.2.1",
     "codacy-coverage": "^2.0.2",

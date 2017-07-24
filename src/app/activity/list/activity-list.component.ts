@@ -4,7 +4,7 @@ import {Activity} from '../shared/activity.model';
 @Component({
   selector: 'activity-list',
   templateUrl: './activity-list.component.html',
-  styleUrls: ['./activity-list.component.scss']
+  styleUrls: ['./activity-list.component.css']
 })
 export default class ActivityListComponent implements OnChanges {
 

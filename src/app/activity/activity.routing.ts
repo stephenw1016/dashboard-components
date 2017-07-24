@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import ActivityOverviewComponent from './overview/activity-overview.component';
 import ActivityComponent from './activity.component';
+import ActivityOverviewComponent from './overview/activity-overview.component';
 
 const routes: Routes = [
   {
-    path: 'activities',
+    path: '',
     component: ActivityComponent,
     children: [
       { path: ':year/:month', component: ActivityOverviewComponent },
@@ -20,6 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ActivityRoutingModule {}
-
-export const routingComponents = [ActivityOverviewComponent];
+export default class ActivityRoutingModule {}
