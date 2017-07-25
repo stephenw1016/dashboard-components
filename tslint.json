@@ -16,14 +16,7 @@
     "member-ordering": [true, "static-before-instance", "variables-before-functions"],
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-variable": true,
@@ -39,13 +32,7 @@
 //    "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
-    "one-line": [
-      true,
-      "check-open-brace",
-      "check-catch",
-      "check-else",
-      "check-whitespace"
-    ],
+    "one-line": [true, "check-open-brace", "check-catch", "check-else", "check-whitespace"],
     "quotemark": [true, "single"],
     "radix": true,
     "semicolon": ["always"],
@@ -58,14 +45,14 @@
       "variable-declaration": "nospace"
     }],
     "variable-name": false,
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ],
+    "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"],
+
+    "angular-whitespace": [true, "check-interpolation", "check-pipe", "check-semicolon"],
+    "banana-in-box": true,
+    "templates-no-negated-async": true,
+    "use-view-encapsulation": true,
+    "pipe-naming": [true, "camelCase", "saw"],
+    "template-to-ng-template": true,
 
     // [ENABLED, "attribute" | "element", "selectorPrefix" | ["listOfPrefixes"], "camelCase" | "kebab-case"]
     "directive-selector": [true, "attribute", ["saw"], "camelCase"],
