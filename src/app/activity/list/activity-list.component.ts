@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core'
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Activity} from '../shared/activity.model';
 
 @Component({
@@ -14,7 +14,7 @@ export default class ActivityListComponent implements OnChanges {
 
   ngOnChanges (changes: SimpleChanges) {
     if (changes.activities && !changes.activities.isFirstChange()) {
-      console.log('>>>>>', changes);
+      console.log('>>>>>', this.activities);
     }
   }
 }

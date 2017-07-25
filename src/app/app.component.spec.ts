@@ -5,7 +5,7 @@ import { TestBed } from '@angular/core/testing';
 import AppComponent from './app.component';
 import ActivityListComponent from './activity/list/activity-list.component';
 import ActivityOverviewComponent from './activity/overview/activity-overview.component';
-import ChartComponent from "./dataviz/chart/chart.component";
+import ChartComponent from './dataviz/chart/chart.component';
 import CounterComponent from './dataviz/counter/counter.component';
 
 const routes: Routes = [

@@ -1,10 +1,10 @@
 import { Http, ResponseOptions, Response, ConnectionBackend, RequestOptions, BaseRequestOptions } from '@angular/http';
-import { Injector } from "@angular/core";
+import { Injector } from '@angular/core';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { async, getTestBed, TestBed } from '@angular/core/testing';
 
-import ActivityService from './activity.service'
-import { Activity} from "./shared/activity.model";
+import ActivityService from './activity.service';
+import { Activity} from './shared/activity.model';
 
 describe('ActivityService', () => {
   let injector: Injector;
