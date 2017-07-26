@@ -51,12 +51,12 @@
     "banana-in-box": true,
     "templates-no-negated-async": true,
     "use-view-encapsulation": true,
-    "pipe-naming": [true, "camelCase", "saw"],
+    "pipe-naming": [true, "camelCase"],
     "template-to-ng-template": true,
 
     // [ENABLED, "attribute" | "element", "selectorPrefix" | ["listOfPrefixes"], "camelCase" | "kebab-case"]
-    "directive-selector": [true, "attribute", ["saw"], "camelCase"],
-    "component-selector": [true, "element", ["saw"], "kebab-case"],
+    "directive-selector": [true, "attribute", ["sw"], "camelCase"],
+    "component-selector": [true, "element", ["sw"], "kebab-case"],
 
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,

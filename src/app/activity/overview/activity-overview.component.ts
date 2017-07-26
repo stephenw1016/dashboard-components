@@ -8,20 +8,22 @@ import { Activity } from '../shared/activity.model';
 import ActivityService from '../activity.service';
 
 @Component({
-  selector: 'activity-overview',
+  selector: 'sw-activity-overview',
   templateUrl: './activity-overview.component.html',
   styleUrls: ['./activity-overview.component.css'],
   providers: [ActivityService]
 })
 export default class ActivityOverviewComponent implements OnInit, OnDestroy {
+
+  public avgDeaths: number;
+  public avgInjuries: number;
+  public data: Object;
+  public totalActivities: number;
+  public totalDeaths: number;
+  public totalInjuries: number;
+
   private activities: Array<Activity>;
-  private totalActivities: number;
-  private totalInjuries: number;
-  private totalDeaths: number;
-  private avgInjuries: number;
-  private avgDeaths: number;
   private activitySubscription: Subscription;
-  private data: Object;
 
   constructor (
     private activityService: ActivityService,

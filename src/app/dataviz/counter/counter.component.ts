@@ -4,7 +4,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { PrettyNumberPipe } from '../../shared/pretty-number/pretty-number.pipe';
 
 @Component({
-  selector: 'counter',
+  selector: 'sw-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css'],
   animations: [
@@ -16,22 +16,24 @@ import { PrettyNumberPipe } from '../../shared/pretty-number/pretty-number.pipe'
   ]
 })
 export default class CounterComponent implements OnChanges, OnInit {
-  @Input() private title: string;
-  @Input() private value: number;
-  @Input() private duration: number;
 
-  private isIncreasing: boolean;
-  private isDecreasing: boolean;
-  private prettyNumberPipe: PrettyNumberPipe;
-  private num: number;
-  private refreshInterval: number;
-  private steps: number;
-  private step: number;
+  @Input() private duration: number;
+  @Input() public title: string;
+  @Input() private value: number;
+
+  public counterState: string;
+  public displayValue: string;
+  public isIncreasing: boolean;
+  public isDecreasing: boolean;
+
+  private animationFrameId: number;
   private countTo: number;
   private increment: number;
-  private animationFrameId: number;
-  private displayValue: string;
-  private counterState: string;
+  private num: number;
+  private prettyNumberPipe: PrettyNumberPipe;
+  private refreshInterval: number;
+  private step: number;
+  private steps: number;
 
   @HostListener('mouseover', ['$event.target'])
   showValue ($event: EventEmitter<string>): void {

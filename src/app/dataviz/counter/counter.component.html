@@ -1,11 +1,11 @@
 <div class="container" [ngClass]="{ 'is-decreasing': isDecreasing, 'is-increasing': isIncreasing }">
 
-  <h3 class="title">{{title}}</h3>
+  <h3 class="title">{{ title }}</h3>
 
   <div [@counterState]="counterState" class="counter">
     <span class="symbol plus">+</span>
     <span class="symbol minus">-</span>
-    <span class="display-value">{{displayValue}}</span>
+    <span class="display-value">{{ displayValue }}</span>
   </div>
 
 </div>

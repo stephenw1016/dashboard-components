@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'activity',
+  selector: 'sw-activity',
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.css']
 })
 export default class ActivityComponent {
 
-  private activityLinks: Array<Object>;
+  public activityLinks: Array<Object>;
 
   constructor () {
     this.activityLinks = [

@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import * as chroma from 'chroma-js';
 
 @Component({
-  selector: 'chart',
+  selector: 'sw-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css'],
 })

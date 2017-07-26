@@ -1,13 +1,13 @@
 <div class="container">
-  <counter class="counter" [title]="'Total Events'" [value]="totalActivities" [duration]="2000"></counter>
-  <counter class="counter" [title]="'Avg. Injuries Per'" [value]="avgInjuries" [duration]="2000"></counter>
-  <counter class="counter" [title]="'Total Injuries'" [value]="totalInjuries" [duration]="2000"></counter>
-  <counter class="counter" [title]="'Avg. Deaths Per'" [value]="avgDeaths" [duration]="2000"></counter>
-  <counter class="counter" [title]="'Total Deaths'" [value]="totalDeaths" [duration]="2000"></counter>
+  <sw-counter class="counter" [title]="'Total Events'" [value]="totalActivities" [duration]="2000"></sw-counter>
+  <sw-counter class="counter" [title]="'Avg. Injuries Per'" [value]="avgInjuries" [duration]="2000"></sw-counter>
+  <sw-counter class="counter" [title]="'Total Injuries'" [value]="totalInjuries" [duration]="2000"></sw-counter>
+  <sw-counter class="counter" [title]="'Avg. Deaths Per'" [value]="avgDeaths" [duration]="2000"></sw-counter>
+  <sw-counter class="counter" [title]="'Total Deaths'" [value]="totalDeaths" [duration]="2000"></sw-counter>
 
   <!--<div>-->
-    <!--<activity-list [activities]="activities"></activity-list>-->
+    <!--<sw-activity-list [activities]="activities"></sw-activity-list>-->
   <!--</div>-->
 
-  <chart [data]="data"></chart>
+  <sw-chart [data]="data"></sw-chart>
 </div>
