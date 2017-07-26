@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnChanges, SimpleChanges, HostListener, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, HostListener, EventEmitter, ViewEncapsulation} from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 import { PrettyNumberPipe } from '../../shared/pretty-number/pretty-number.pipe';
@@ -13,7 +13,8 @@ import { PrettyNumberPipe } from '../../shared/pretty-number/pretty-number.pipe'
       state('decreasing', style({ color: '#ca3f30' })),
       transition('* <=> *', animate('200ms ease-out'))
     ])
-  ]
+  ],
+  encapsulation: ViewEncapsulation.Native
 })
 export default class CounterComponent implements OnChanges, OnInit {
 

@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import * as d3 from 'd3';
+
 import { Subscription } from 'rxjs/Subscription';
 
 import { Activity } from '../shared/activity.model';
