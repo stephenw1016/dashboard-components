@@ -5,7 +5,7 @@ import AppComponent from './app.component';
 import AppRoutingModule from './app.routing';
 
 
-describe('App', () => {
+describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
