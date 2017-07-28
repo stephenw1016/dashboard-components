@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import * as d3 from 'd3';
@@ -12,7 +12,8 @@ import ActivityService from '../activity.service';
   selector: 'sw-activity-overview',
   templateUrl: './activity-overview.component.html',
   styleUrls: ['./activity-overview.component.css'],
-  providers: [ActivityService]
+  providers: [ActivityService],
+  encapsulation: ViewEncapsulation.Native
 })
 export default class ActivityOverviewComponent implements OnInit, OnDestroy {
 

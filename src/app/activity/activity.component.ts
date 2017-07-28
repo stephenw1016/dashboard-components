@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'sw-activity',
   templateUrl: './activity.component.html',
-  styleUrls: ['./activity.component.css']
+  styleUrls: ['./activity.component.css'],
+  encapsulation: ViewEncapsulation.Native
 })
 export default class ActivityComponent {
 

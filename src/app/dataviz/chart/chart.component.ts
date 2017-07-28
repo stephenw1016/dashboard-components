@@ -1,4 +1,7 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import {
+  AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 
 import * as chroma from 'chroma-js';
 
@@ -8,8 +11,8 @@ import * as d3 from 'd3';
   selector: 'sw-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-  // encapsulation: ViewEncapsulation.Native
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.Native
 })
 export default class ChartComponent implements AfterViewInit, OnChanges {
   @ViewChild('chartContainer') chartContainer: ElementRef;
@@ -28,9 +31,7 @@ export default class ChartComponent implements AfterViewInit, OnChanges {
     let width = 300;
     let marginLeft = height / 2;
     let marginTop = width / 2;
-    // TODO: make this selection work with ViewEncapsulation.Native
-    let selection = d3.select(`.${this.chartContainer.nativeElement.className}`);
-    console.log(this.chartContainer, selection);
+    let selection = d3.select(this.chartContainer.nativeElement);
 
     this.svg = selection.append('svg')
       .attr('width', width)
