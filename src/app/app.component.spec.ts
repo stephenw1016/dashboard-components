@@ -1,39 +1,47 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 import { TestBed } from '@angular/core/testing';
 
 import AppComponent from './app.component';
-import ActivityListComponent from './activity/list/activity-list.component';
-import ActivityOverviewComponent from './activity/overview/activity-overview.component';
-import ChartComponent from './dataviz/chart/chart.component';
-import CounterComponent from './dataviz/counter/counter.component';
+import AppRoutingModule from './app.routing';
 
-const routes: Routes = [
-  { path: 'detail/counter', component: ActivityOverviewComponent },
-  { path: '', redirectTo: 'detail/counter?start=50', pathMatch: 'full' },
-];
 
 describe('App', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot(routes)
+        AppRoutingModule
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' }
       ],
       declarations: [
-        AppComponent,
-        CounterComponent,
-        ChartComponent,
-        ActivityOverviewComponent,
-        ActivityListComponent
+        AppComponent
       ],
     });
   });
 
-  it ('should work', () => {
-    let fixture = TestBed.createComponent(AppComponent);
-    expect(fixture.componentInstance instanceof AppComponent).toBe(true, 'should create AppComponent');
+  describe('componentInstance', () => {
+    let appComponent: AppComponent;
+
+    beforeEach(() => appComponent = TestBed.createComponent(AppComponent).componentInstance);
+    afterEach(() => appComponent = null);
+
+    it ('should create AppComponent', () => {
+      expect(appComponent instanceof AppComponent).toBe(true);
+    });
+  });
+
+  describe('template', () => {
+    let element: HTMLElement;
+
+    beforeEach(() => element = TestBed.createComponent(AppComponent).nativeElement);
+    afterEach(() => element = null);
+
+    it ('should have routerlink to activities', () => {
+      expect(element.querySelector('.root-nav').children[0].getAttribute('routerlink')).toBe('activities');
+    });
+    it ('should have router-outlet for displaying activated route', () => {
+      expect(element.getElementsByTagName('ROUTER-OUTLET')[0]).toBeDefined();
+    });
   });
 });
