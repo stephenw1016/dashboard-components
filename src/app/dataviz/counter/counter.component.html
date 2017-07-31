@@ -1,11 +1,14 @@
-<div class="container" [ngClass]="{ 'is-decreasing': isDecreasing, 'is-increasing': isIncreasing }">
+<div class="container"
+     [class.is-increasing]="counterState === 'increasing'"
+     [class.is-decreasing]="counterState === 'decreasing'">
 
   <h3 class="title">{{ title }}</h3>
 
   <div [@counterState]="counterState" class="counter">
     <span class="symbol plus">+</span>
     <span class="symbol minus">-</span>
-    <span class="display-value">{{ displayValue }}</span>
+    <span swCounter [value]="value" [duration]="duration"
+          (direction)="setCounterState($event)" class="display-value"></span>
   </div>
 
 </div>

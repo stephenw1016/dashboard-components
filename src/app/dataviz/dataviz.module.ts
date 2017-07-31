@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import ChartComponent from './chart/chart.component';
 import CounterComponent from './counter/counter.component';
 import SharedModule from '../shared/shared.module';
+import CounterDirective from './counter/counter.directive';
 
 @NgModule({
   imports: [
@@ -10,11 +11,13 @@ import SharedModule from '../shared/shared.module';
   ],
   declarations: [
     ChartComponent,
-    CounterComponent
+    CounterComponent,
+    CounterDirective
   ],
   exports: [
     ChartComponent,
-    CounterComponent
+    CounterComponent,
+    CounterDirective
   ]
 })
 export default class DataVizModule {}
