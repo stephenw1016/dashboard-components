@@ -2,29 +2,24 @@ import { ActivityType } from './ActivityType';
 
 export class Activity {
 
-  private date: Date;
-  private dead: number;
+  private date: number;
+  private deaths: number;
   private details: string;
-  private injured: number;
+  private injuries: number;
   private location: Array<number>;
-  private locationUrl: string;
   private locationName: string;
   private partOf: string;
   private perpetrator: string;
   private type: ActivityType;
 
   constructor (activity: any) {
-    let injuryCount = parseInt(activity.injured, 10);
-    let deathCount = parseInt(activity.dead, 10);
-
     this.date = activity.date;
-    this.dead = isNaN(deathCount) ? 0 : deathCount;
+    this.deaths = activity.deaths;
     this.details = activity.details;
-    this.injured = isNaN(injuryCount) ? 0 : injuryCount;
+    this.injuries = activity.injuries;
     this.location = activity.location;
-    this.locationUrl = activity['location-url'];
-    this.locationName = activity['location_name'];
-    this.partOf = activity['part of'];
+    this.locationName = activity.locationName;
+    this.partOf = activity.partOf;
     this.perpetrator = activity.perpetrator;
     this.type = activity.type;
   }
@@ -33,24 +28,20 @@ export class Activity {
     return this.date;
   }
 
-  getDead () {
-    return this.dead;
+  getDeaths () {
+    return this.deaths;
   }
 
   getDetails () {
     return this.details;
   }
 
-  getInjured () {
-    return this.injured;
+  getInjuries () {
+    return this.injuries;
   }
 
   getLocation () {
     return this.location;
-  }
-
-  getLocationUrl () {
-    return this.locationUrl;
   }
 
   getLocationName () {

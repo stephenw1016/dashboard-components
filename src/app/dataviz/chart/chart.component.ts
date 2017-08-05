@@ -65,6 +65,8 @@ export default class ChartComponent implements AfterViewInit, OnChanges {
       .duration(duration)
       .attr('d', arcTween);
 
+    this.svg.selectAll('path').on('click', (d: any) => console.log(d));
+
     path.exit().remove();
 
     path.transition()

@@ -12,6 +12,10 @@ import 'chroma-js';
 // D3
 import 'd3';
 
+// Firebase
+import 'angularfire2/database';
+import 'firebase';
+
 // RxJS
 import 'rxjs';
 

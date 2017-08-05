@@ -35,7 +35,6 @@ export default class ActivityOverviewComponent implements OnInit, OnDestroy {
   ngOnInit () {
     this.activitySubscription = this.route.params.subscribe((params: Params) => {
       this.activityService.getActivities(params.year, params.month).subscribe((activities) => {
-        console.log(activities);
         this.activities = activities;
         this.totalActivities = activities.length;
         this.totalInjuries = this.sumInjuries(activities);
@@ -53,14 +52,14 @@ export default class ActivityOverviewComponent implements OnInit, OnDestroy {
 
   sumInjuries (activities: Array<Activity>): number {
     return activities.reduce((injuryCount, activity) => {
-      injuryCount += activity.getInjured();
+      injuryCount += activity.getInjuries();
       return injuryCount;
     }, 0);
   }
 
   sumDeaths (activities: Array<Activity>): number {
     return activities.reduce((deathCount, activity) => {
-      deathCount += activity.getDead();
+      deathCount += activity.getDeaths();
       return deathCount;
     }, 0);
   }
