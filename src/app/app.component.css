@@ -1,6 +1,11 @@
 nav {
+  background: rgba(0, 0, 0, 0.05);
   color: #fff;
   padding: 15px;
+}
+
+a {
+  margin-right: 30px;
 }
 
 a, a:visited {

@@ -24,7 +24,7 @@ import {environment} from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase, 'Dashboard Components')
   ],
   exports: [
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent

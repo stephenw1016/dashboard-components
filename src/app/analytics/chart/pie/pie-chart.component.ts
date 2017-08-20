@@ -8,13 +8,13 @@ import * as chroma from 'chroma-js';
 import * as d3 from 'd3';
 
 @Component({
-  selector: 'sw-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css'],
+  selector: 'sw-pie-chart',
+  templateUrl: './pie-chart.component.html',
+  styleUrls: ['./pie-chart.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.Native
 })
-export default class ChartComponent implements AfterViewInit, OnChanges {
+export default class PieChartComponent implements AfterViewInit, OnChanges {
   @ViewChild('chartContainer') chartContainer: ElementRef;
   @Input('data') data: Object;
 

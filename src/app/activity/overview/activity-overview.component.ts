@@ -1,12 +1,11 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import * as d3 from 'd3';
-
 import { Subscription } from 'rxjs/Subscription';
 
 import { Activity } from '../shared/activity.model';
 import ActivityService from '../activity.service';
+import AnalyticsService from '../../analytics/analytics.service';
 
 @Component({
   selector: 'sw-activity-overview',
@@ -19,7 +18,7 @@ export default class ActivityOverviewComponent implements OnInit, OnDestroy {
 
   public avgDeaths: number;
   public avgInjuries: number;
-  public data: Object;
+  public data: object;
   public totalActivities: number;
   public totalDeaths: number;
   public totalInjuries: number;
@@ -29,7 +28,8 @@ export default class ActivityOverviewComponent implements OnInit, OnDestroy {
 
   constructor (
     private activityService: ActivityService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private analyticsService: AnalyticsService
   ) {}
 
   ngOnInit () {
@@ -41,7 +41,7 @@ export default class ActivityOverviewComponent implements OnInit, OnDestroy {
         this.totalDeaths = this.sumDeaths(activities);
         this.avgInjuries = this.totalInjuries / this.totalActivities;
         this.avgDeaths = this.totalDeaths / this.totalActivities;
-        this.data = d3.nest().key((d: Activity) => d.getType().toString().toLowerCase()).entries(activities);
+        this.data = this.analyticsService.nest(activities, 'type');
       });
     });
   }
