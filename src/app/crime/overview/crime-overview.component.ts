@@ -25,8 +25,8 @@ export default class CrimeOverviewComponent implements OnInit, OnDestroy {
   ngOnInit () {
     this.crimeSub = this.crimeService.getAll().subscribe((crimes: any) => {
       this.totalCrimes = crimes.length;
-      this.occurenceAggregation = this.analyticsService.nest(crimes, 'OFFENSE');
-      this.shiftAggregation = this.analyticsService.nest(crimes, 'SHIFT');
+      this.occurenceAggregation = this.analyticsService.nest(crimes, 'offense');
+      this.shiftAggregation = this.analyticsService.nest(crimes, 'shift');
     });
   }
 

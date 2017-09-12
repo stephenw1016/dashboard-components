@@ -1,0 +1,10 @@
+.chart svg {
+  height: 300px;
+  width: 500px;
+}
+
+.chart rect {
+  cursor: pointer;
+  fill-opacity: 1;
+  transition: fill-opacity .2s ease-out;
+}

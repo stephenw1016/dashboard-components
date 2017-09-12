@@ -5,23 +5,26 @@ import CounterComponent from './counter/counter.component';
 import SharedModule from '../shared/shared.module';
 import CounterDirective from './counter/counter.directive';
 import AnalyticsService from './analytics.service';
+import VerticalBarChartComponent from './chart/vertical-bar/vertical-bar-chart.component';
 
 @NgModule({
   imports: [
     SharedModule
   ],
   declarations: [
-    PieChartComponent,
     CounterComponent,
-    CounterDirective
+    CounterDirective,
+    PieChartComponent,
+    VerticalBarChartComponent
   ],
   providers: [
     AnalyticsService
   ],
   exports: [
-    PieChartComponent,
     CounterComponent,
-    CounterDirective
+    CounterDirective,
+    PieChartComponent,
+    VerticalBarChartComponent
   ]
 })
 export default class AnalyticsModule {}
